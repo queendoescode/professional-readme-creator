@@ -1,0 +1,23 @@
+{
+  "name": "professional-readme-creator",
+  "version": "1.0.0",
+  "description": "This command line application prompts the user for information to include and produces a complete, formatted README file in Markdown format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/queendoescode/professional-readme-creator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/queendoescode/professional-readme-creator/issues"
+  },
+  "homepage": "https://github.com/queendoescode/professional-readme-creator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.5"
+  }
+}
