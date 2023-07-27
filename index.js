@@ -41,6 +41,29 @@ inquirer
       name:"description", 
       message:"Enter the description of the project:",
     },
+    {
+      name:"installation", 
+      message:"Enter the installation instructions for the project:",
+    },
+
+    {
+        name:"usage", 
+      message:"Enter the usage instructions for the project:",
+    },
+
+    {
+      name:"contributing", 
+    message:"Enter the contributing instructions for the project:",
+  },
+
+
+    {
+      name:"tests", 
+    message:"Enter the tests instructions for the project:",
+  },
+ 
+
+
   ])
   .then(answers => {
     let markdown = readme(answers);
