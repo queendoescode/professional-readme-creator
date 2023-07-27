@@ -5,14 +5,27 @@ const fs = require('fs');
 
 function readme (answers) {
   return `
-
-This is the README FILE!!
-
-Text in the template.
-
 # ${answers.projectTitle}
 
-End of the file.
+## Description
+
+${answers.description}
+
+## Installation
+
+${answers.installation}
+
+## Usage
+
+${answers.usage}
+
+## Contributing
+
+${answers.contributing}
+
+## Tests
+
+${answers.tests}
 
   `;
 }
@@ -23,6 +36,10 @@ inquirer
     {
       name:"projectTitle", 
       message:"What is the title of your project?",
+    },
+    {
+      name:"description", 
+      message:"Enter the description of the project:",
     },
   ])
   .then(answers => {
