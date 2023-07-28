@@ -22,3 +22,5 @@ This command line application prompts the user for information to include and pr
 * In my License question, I used some of the licenses listed on this page:
 https://www.mend.io/blog/top-open-source-licenses-explained/
 
+* I am using the Markdown license badges published at https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+

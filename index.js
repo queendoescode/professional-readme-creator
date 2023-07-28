@@ -4,12 +4,26 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 function readme (answers) {
+
+  let licenseBadge = "";
+// choices: ["GPL", "Apache", "BSD", "MIT"]
+  if (answers.license === "GPL v3") {
+    licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+  } else if (answers.license === "Apache") {
+    licenseBadge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+  } else if (answers.license === "BSD") {
+    licenseBadge = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+  } else if (answers.license === "MIT") {
+    licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+  }
+
   return `
 # ${answers.projectTitle}
 
 ## Table of Contents
 
 * [Description](#description)
+* [License](#license)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -19,6 +33,14 @@ function readme (answers) {
 ## Description
 
 ${answers.description}
+
+## License
+
+The code in this project is licensed according to the ${answers.license} license.
+
+${licenseBadge}
+
+
 
 ## Installation
 
@@ -75,7 +97,7 @@ inquirer
       name:"license", 
       message:"Choose a license for the project:",
       type: "list",
-      choices: ["GPL", "Apache", "BSD", "MIT"]
+      choices: ["GPL v3", "Apache", "BSD", "MIT"]
     },
     {
       name:"github", 
@@ -97,15 +119,15 @@ inquirer
       {},
       error => {
         if (error) {
-          console.log("An error occurred writing the README file");
+          console.log("An error occurred writing the README file.");
         } else {
-          console.log("We made your README!");
+          console.log("We made your README. It can be found in the 'Generated' folder.");
         }
       });
 
   })
   .catch(error => {
     console.log(error);
-    console.log('there was a problem asking questions ask developer to debug');
+    console.log('There was a problem asking questions. Ask the developer to debug.');
   });
 
