@@ -19,3 +19,6 @@ This command line application prompts the user for information to include and pr
 
 ## Third Party Resources used by this site
 
+* In my License question, I used some of the licenses listed on this page:
+https://www.mend.io/blog/top-open-source-licenses-explained/
+

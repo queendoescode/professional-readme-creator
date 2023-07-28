@@ -7,6 +7,15 @@ function readme (answers) {
   return `
 # ${answers.projectTitle}
 
+## Table of Contents
+
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
 ## Description
 
 ${answers.description}
@@ -27,6 +36,11 @@ ${answers.contributing}
 
 ${answers.tests}
 
+##  Questions
+
+* https://github.com/${answers.github}
+* Contact me by email at mailto:${answers.email} if you have questions.
+
   `;
 }
 
@@ -45,24 +59,33 @@ inquirer
       name:"installation", 
       message:"Enter the installation instructions for the project:",
     },
-
     {
-        name:"usage", 
+      name:"usage", 
       message:"Enter the usage instructions for the project:",
+    },
+    {
+      name:"contributing", 
+      message:"Enter the contributing instructions for the project:",
+    },
+    {
+      name:"tests", 
+      message:"Enter the tests instructions for the project:",
+    },
+    {
+      name:"license", 
+      message:"Choose a license for the project:",
+      type: "list",
+      choices: ["GPL", "Apache", "BSD", "MIT"]
+    },
+    {
+      name:"github", 
+      message:"What is your GitHub user name?",
     },
 
     {
-      name:"contributing", 
-    message:"Enter the contributing instructions for the project:",
-  },
-
-
-    {
-      name:"tests", 
-    message:"Enter the tests instructions for the project:",
-  },
- 
-
+      name:"email", 
+      message:"What is your email address?",
+    },
 
   ])
   .then(answers => {
