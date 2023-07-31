@@ -20,6 +20,8 @@ function readme (answers) {
   return `
 # ${answers.projectTitle}
 
+${licenseBadge}
+
 ## Table of Contents
 
 * [Description](#description)
@@ -37,10 +39,6 @@ ${answers.description}
 ## License
 
 The code in this project is licensed according to the ${answers.license} license.
-
-${licenseBadge}
-
-
 
 ## Installation
 
